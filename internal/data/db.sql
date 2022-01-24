@@ -1,0 +1,2 @@
+CREATE ROLE gopher WITH LOGIN PASSWORD 'gopher';
+CREATE DATABASE dbVentas OWNER gopher;
