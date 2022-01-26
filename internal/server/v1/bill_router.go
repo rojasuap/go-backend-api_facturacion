@@ -7,8 +7,8 @@ import (
 	"strconv"
 
 	"github.com/go-chi/chi"
-	"github.com/orlmonteverde/go-postgres-microblog/pkg/bill"
-	"github.com/orlmonteverde/go-postgres-microblog/pkg/response"
+	"github.com/rojasuap/go-backend-api_facturacion/pkg/bill"
+	"github.com/rojasuap/go-backend-api_facturacion/pkg/response"
 )
 
 // PromotionRouter is the router of the promotions.

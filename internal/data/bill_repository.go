@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/orlmonteverde/go-postgres-microblog/pkg/bill"
+	"github.com/rojasuap/go-backend-api_facturacion/pkg/bill"
 )
 
 // PromotionsRepository manages the operations with the database that

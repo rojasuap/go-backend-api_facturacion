@@ -86,7 +86,7 @@ microblog.exe
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/orlmonteverde/go-postgres-microblog/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/rojasuap/go-backend-api_facturacion/tags).
 
 ## Authors
 

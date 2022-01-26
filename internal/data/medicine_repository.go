@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/orlmonteverde/go-postgres-microblog/pkg/medicine"
+	"github.com/rojasuap/go-backend-api_facturacion/pkg/medicine"
 )
 
 // MedicineRepository manages the operations with the database that

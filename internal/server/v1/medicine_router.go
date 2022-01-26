@@ -6,8 +6,8 @@ import (
 	"strconv"
 
 	"github.com/go-chi/chi"
-	"github.com/orlmonteverde/go-postgres-microblog/pkg/medicine"
-	"github.com/orlmonteverde/go-postgres-microblog/pkg/response"
+	"github.com/rojasuap/go-backend-api_facturacion/pkg/medicine"
+	"github.com/rojasuap/go-backend-api_facturacion/pkg/response"
 )
 
 // PostRouter is the router of the posts.

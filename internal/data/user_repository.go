@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/orlmonteverde/go-postgres-microblog/pkg/user"
+	"github.com/rojasuap/go-backend-api_facturacion/pkg/user"
 )
 
 // UserRepository manages the operations with the database that
