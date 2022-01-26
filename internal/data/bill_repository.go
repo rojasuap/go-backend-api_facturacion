@@ -58,11 +58,11 @@ func (pr *BillRepository) GetOne(ctx context.Context, id uint) (bill.Bill, error
 // GetAll returns all posts.
 func (pr *BillRepository) GetAllDays(ctx context.Context) ([]bill.Bill, error) {
 	q := `
-	SELECT created_at
+	SELECT created_at, SUM(full_payment) as full_payment
 		FROM bills
-	 ORDER BY created_at;
+	 GROUP BY created_at 
+	 ORDER BY created_at ASC;
 	`
-
 	rows, err := pr.Data.DB.QueryContext(ctx, q)
 	if err != nil {
 		return nil, err
@@ -73,7 +73,7 @@ func (pr *BillRepository) GetAllDays(ctx context.Context) ([]bill.Bill, error) {
 	var bills []bill.Bill
 	for rows.Next() {
 		var p bill.Bill
-		rows.Scan(&p.ID, &p.CreatedAt, &p.Full_payment, &p.UpdatedAt)
+		rows.Scan(&p.CreatedAt, &p.Full_payment)
 		bills = append(bills, p)
 	}
 
@@ -85,7 +85,7 @@ func (pr *BillRepository) GetAllPayments(ctx context.Context) ([]bill.Bill, erro
 	q := `
 	SELECT full_payment
 		FROM bills
-	 ORDER BY created_at;
+	 ORDER BY full_payment;
 	`
 
 	rows, err := pr.Data.DB.QueryContext(ctx, q)
@@ -98,7 +98,7 @@ func (pr *BillRepository) GetAllPayments(ctx context.Context) ([]bill.Bill, erro
 	var bills []bill.Bill
 	for rows.Next() {
 		var p bill.Bill
-		rows.Scan(&p.ID, &p.CreatedAt, &p.Full_payment, &p.UpdatedAt)
+		rows.Scan(&p.Full_payment, &p.Full_payment)
 		bills = append(bills, p)
 	}
 

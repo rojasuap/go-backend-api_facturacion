@@ -38,7 +38,14 @@ func (pr *BillRouter) CreateHandler(w http.ResponseWriter, r *http.Request) {
 	response.JSON(w, r, http.StatusCreated, response.Map{"bills": p})
 }
 
-// GetAllHandler response all the bills.
+// RootHandler - Returns all the available APIs
+// @Summary This API can be used as health check for this application.
+// @Description Tells if the chi-swagger APIs are working or not.
+// @Tags chi-swagger
+// @Accept  json
+// @Produce  json
+// @Success 200 {string} response "api response"
+// @Router / [get]
 func (pr *BillRouter) GetAllHandler(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
@@ -179,6 +186,10 @@ func (pr *BillRouter) Routes() http.Handler {
 	r.Post("/", pr.CreateHandler)
 
 	r.Get("/{id}", pr.GetOneHandler)
+
+	r.Get("/dias", pr.GetAllDaysHandler)
+
+	r.Get("/totales", pr.GetAllPaymentsHandler)
 
 	r.Put("/{id}", pr.UpdateHandler)
 

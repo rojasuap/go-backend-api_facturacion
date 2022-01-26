@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS promotions (
 
 CREATE TABLE IF NOT EXISTS bills (
     id serial NOT NULL,
-    created_at VARCHAR(10) DEFAULT now(),
+    created_at VARCHAR(10) NOT NULL,
     full_payment float NOT NULL,
     updated_at timestamp NOT NULL,
     CONSTRAINT pk_bills PRIMARY KEY(id)--,
